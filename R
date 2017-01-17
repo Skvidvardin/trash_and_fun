@@ -1,0 +1,29 @@
+mydata = read.csv("mydata.csv", sep = ",")
+head(mydata)
+hist(mydata$age)
+max(mydata$wage)
+min(mydata$wage)
+mean(mydata$wage)
+min(mydata$wage[mydata$wage > 0])
+hist(mydata$wage[mydata$wage > 0 & mydata$wage < 100000]) #с условием
+nrow(mydata[mydata$gender == 0,])
+nrow(mydata[mydata$educ_l == 1,])
+reg(mydata)
+
+#регрессия
+fit <- lm(wage ~ age + gender, data=mydata)
+summary(fit)
+
+#регрессия на все
+fit <- lm(wage ~ ., data=mydata)
+summary(fit)
+
+#регрессия без константы
+fit <- lm(wage ~ .-1, data=mydata)
+summary(fit)
+
+#регрессия с нелинейным возрастом
+fit <- lm(wage ~ age +I(age^2), data=mydata)
+summary(fit)
+
+
