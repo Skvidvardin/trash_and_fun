@@ -1,0 +1,40 @@
+#подгружаем библтотеку car в R
+library(car)
+
+#выгружаем из библиотеки данные
+data("mtcars")
+
+#обучаем линейную модель
+a <- lm(mpg ~ hp + disp + wt + am, data = mtcars)
+
+#ищем vif
+vif(a)
+
+#vif ручками
+a1 <- lm(hp ~ disp + wt + am, data = mtcars) #ищем X1 на остальные
+1/(1 - summary(a1)$r.squared)
+
+#hist for mpg
+hist(mtcars$mpg)
+
+#matrix of correlation
+cor(mtcars)
+
+#показатели для составляющих mtcars
+summary(mtcars)
+
+#метод главных компонент
+pc <- prcomp(mtcars)
+pc
+
+#метод главных компонент для 3,4,6,9 переменных ()
+pc <- prcomp(mtcars[, c(3,4,6,9)])
+pc
+
+#пихаем их в регрессию
+#pc$x сами вектора переменных
+#pc матрица весов
+m_pc <-lm(mtcars$mpg ~ pc$x)
+m_pc
+summary(m_pc)
+cor(pc$x)
