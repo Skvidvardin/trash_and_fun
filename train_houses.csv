@@ -1,4 +1,4 @@
-,date,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,price
+date,bedrooms,bathrooms,sqft_living,sqft_lot,floors,waterfront,condition,grade,sqft_above,sqft_basement,yr_built,yr_renovated,zipcode,lat,long,price
 0,2014-09-16,5.0,3.25,3710,34200,2.0,False,3,8,2510,1200,1986,0,98074,47.6101,-122.04700000000001,635000.0
 1,2014-11-18,3.0,1.75,2820,8879,1.0,False,5,7,1540,1280,1920,1957,98146,47.5094,-122.376,456700.0
 2,2014-11-10,3.0,1.0,1240,239144,1.0,False,3,6,1240,0,1921,1992,98038,47.4303,-122.046,234000.0
